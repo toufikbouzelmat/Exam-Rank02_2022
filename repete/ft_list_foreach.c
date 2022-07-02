@@ -1,47 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   paramsum.c                                         :+:      :+:    :+:   */
+/*   ft_list_foreach.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbouzalm <tbouzalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/08 18:25:29 by tbouzalm          #+#    #+#             */
-/*   Updated: 2022/06/30 09:07:57 by tbouzalm         ###   ########.fr       */
+/*   Created: 2022/06/29 23:52:42 by tbouzalm          #+#    #+#             */
+/*   Updated: 2022/06/29 23:53:22 by tbouzalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-#include<stdio.h>
+#include "ft_list_b.h"
 
-void	ft_putchar(char c)
+void    ft_list_foreach(t_list *begin_list, void (*f)(void *))
 {
-	write(1, &c, 1);
-}
-
-void	ft_putnbr(int n)
-{
-	long nbr;
-
-	nbr = n;
-	if (nbr < 0)
-	{
-		ft_putchar('-');
-		nbr *= -1;
-	}
-	else if (nbr > 9)
-	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
-	}
-	else 
-		ft_putchar(nbr + '0');
-}
-
-int	main(int ac, char **av)
-{
-	int	i;
-	if (ac > 0)
-	{
-		ft_putnbr(ac - 1);
-	}
+    
 }

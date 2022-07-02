@@ -6,13 +6,27 @@
 /*   By: tbouzalm <tbouzalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 05:47:52 by tbouzalm          #+#    #+#             */
-/*   Updated: 2022/06/07 06:12:41 by tbouzalm         ###   ########.fr       */
+/*   Updated: 2022/06/30 05:38:26 by tbouzalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 #include<math.h>
 #include<stdio.h>
+
+int	ft_pow(int base, int power)
+{
+	int result;
+
+	result = 1;
+	while (power > 0)
+	{
+		result = result * base;
+		power--;
+	}
+	return (result);
+	
+}
 
 unsigned char	reverse_bits(unsigned char octet)
 {
@@ -26,7 +40,7 @@ unsigned char	reverse_bits(unsigned char octet)
 	{
 		if (octet >> i & 1)
 		{
-			c += pow(2, j);
+			c += ft_pow(2, j);
 			j--;
 		}
 		else

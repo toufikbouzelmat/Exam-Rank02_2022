@@ -6,7 +6,7 @@
 /*   By: tbouzalm <tbouzalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 03:45:31 by tbouzalm          #+#    #+#             */
-/*   Updated: 2022/06/06 04:16:59 by tbouzalm         ###   ########.fr       */
+/*   Updated: 2022/06/30 03:54:50 by tbouzalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ size_t	ft_strcspn(const char *s, const char *reject)
 int	main()
 {
 	char *s="hymze";
-	char *reject = "taoufik";
+	char *reject = "hymze";
 	
 	printf("strcspn:%lu\n",strcspn(s,reject));
 	printf("ft_strcspn:%lu",ft_strcspn(s,reject));

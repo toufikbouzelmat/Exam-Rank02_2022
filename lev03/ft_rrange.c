@@ -6,7 +6,7 @@
 /*   By: tbouzalm <tbouzalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 02:41:07 by tbouzalm          #+#    #+#             */
-/*   Updated: 2022/06/13 03:19:46 by tbouzalm         ###   ########.fr       */
+/*   Updated: 2022/06/24 00:19:40 by tbouzalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,41 +16,40 @@
 
 int	*ft_range(int start, int end)
 {
-	int	size;
+	unsigned int	size;
 	int	*ret;
 	int	*ptr;
 
-	size = end - start;
-	if (size)
+	size = (end - start);
+	ptr = (int *)malloc(sizeof(int) * size);
+	if (end >= start)
 	{
-		ptr = (int *)malloc(sizeof(int) * size);
-		if (ptr)
+		while (end >= start)
 		{
-			ret = ptr;
-			while (start <= end)
-			{
-				*ptr = end;
-				end--;
-				ptr++;
-			}
-			return (ret);
+			*ptr = end;
+			printf("%d\n",*ptr);
+			ptr++;
+			end--;
 		}
 	}
-	return (NULL);
-}
+	else if (start >= end)
+	{
+		while (start >= end)
+		{
+			*ptr = end;
+			printf("%d\n",*ptr);
+			ptr++;
+			end++;
+		}
+	}
+	return (ret);
 
+}
 int main()
 {
-	int	*lst;
-	int	*head;
 
-	lst = ft_range(0, 16);
-	head = lst;
-	while (*lst)
-	{
-		printf("%i\n", *lst);
-		lst++;	
-	}
-	free(head);
+
+	ft_range(0, -3);
+
 	return (0);
 }

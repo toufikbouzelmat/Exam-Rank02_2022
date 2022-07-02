@@ -1,47 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   paramsum.c                                         :+:      :+:    :+:   */
+/*   ft_list_b.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbouzalm <tbouzalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/08 18:25:29 by tbouzalm          #+#    #+#             */
-/*   Updated: 2022/06/30 09:07:57 by tbouzalm         ###   ########.fr       */
+/*   Created: 2022/06/29 23:51:22 by tbouzalm          #+#    #+#             */
+/*   Updated: 2022/06/29 23:52:21 by tbouzalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-#include<stdio.h>
+#ifndef FT_LIST_B_H
+# define FT_LIST_B_H
 
-void	ft_putchar(char c)
+typedef struct    s_list
 {
-	write(1, &c, 1);
-}
+    struct s_list *next;
+    void          *data;
+}                 t_list;
 
-void	ft_putnbr(int n)
-{
-	long nbr;
-
-	nbr = n;
-	if (nbr < 0)
-	{
-		ft_putchar('-');
-		nbr *= -1;
-	}
-	else if (nbr > 9)
-	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
-	}
-	else 
-		ft_putchar(nbr + '0');
-}
-
-int	main(int ac, char **av)
-{
-	int	i;
-	if (ac > 0)
-	{
-		ft_putnbr(ac - 1);
-	}
-}
+#endif
