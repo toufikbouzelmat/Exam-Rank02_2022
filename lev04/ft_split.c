@@ -1,18 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tbouzalm <tbouzalm@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/14 05:08:00 by tbouzalm          #+#    #+#             */
-/*   Updated: 2022/06/15 00:23:49 by tbouzalm         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include<unistd.h>
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdlib.h>
 
 int		ft_wordlen(char *str)
 {
@@ -74,26 +60,12 @@ char	**ft_split(char *str)
 	int		num_words;
 	char	**array;
 
+    if (!str)
+        return (NULL);
 	num_words = count_words(str);
 	array = malloc(sizeof(char *) * (num_words + 1));
 	array[num_words] = 0;
 
 	fill_words(array, str);
 	return (array);
-}
-
-int	main()
-{
-	char **s;
-	int i;
-	char test[]= "test raja dima pppp";
-	
-	s = ft_split(test);
-	i = 0;
-	while (s[i] != 0)
-	{
-		printf("[%s]\n", s[i]);
-		i++;
-	}
-	
 }
