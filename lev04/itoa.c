@@ -6,7 +6,7 @@
 /*   By: tbouzalm <tbouzalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 06:11:58 by tbouzalm          #+#    #+#             */
-/*   Updated: 2022/06/13 06:25:54 by tbouzalm         ###   ########.fr       */
+/*   Updated: 2022/07/22 06:49:41 by tbouzalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,6 @@ char	*ft_itoa(int nbr)
 
 int	main()
 {
-	int nbr = -65726;
+	int nbr = 65726;
 	printf("%s\n",ft_itoa(nbr));
 }

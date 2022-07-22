@@ -6,7 +6,7 @@
 /*   By: tbouzalm <tbouzalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 07:43:16 by tbouzalm          #+#    #+#             */
-/*   Updated: 2022/06/14 07:43:42 by tbouzalm         ###   ########.fr       */
+/*   Updated: 2022/07/22 06:56:21 by tbouzalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,27 +36,4 @@ void	sort_int_tab(int *tab, unsigned int size)
 			++i;
 		}
 	}
-}
-
-#include <stdio.h>
-
-void	print_arr(int *tab, unsigned int size)
-{
-	unsigned int i = 0;
-	while (i < size)
-	{
-		printf("%d, ", tab[i]);
-		++i;
-	}
-	printf("\n");
-}
-
-int		main(void)
-{
-	int tab[] = { 5, -4, 3, -2, 1, 0 };
-	unsigned int size = sizeof(tab) / sizeof(*tab);
-
-	print_arr(tab, size);
-	sort_int_tab(tab, size);
-	print_arr(tab, size);
 }

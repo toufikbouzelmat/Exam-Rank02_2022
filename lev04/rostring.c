@@ -6,7 +6,7 @@
 /*   By: tbouzalm <tbouzalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 00:37:20 by tbouzalm          #+#    #+#             */
-/*   Updated: 2022/06/14 02:37:24 by tbouzalm         ###   ########.fr       */
+/*   Updated: 2022/07/22 06:55:26 by tbouzalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,25 +21,21 @@ void	ft_rostring(char *str)
 	int len_first_word;
 
 	i = 0;
-	while (str[i] == '	')
-	{
+	while (str[i] == '	' && str[i] =='\t')
 		i++;
-	}
 	i = 0;
-	while (str[i] != ' ')
-	{
+	while (str[i] != ' ' && str[i] != '\t')
 		i++;
-	}
 	len_first_word = i;
 	first_word = (char *)malloc((len_first_word + 1) * 1);
 	i = 0;
-	while (str[i] != ' ' )
+	while (str[i] != ' ' && str[i] != '\t')
 	{
 		first_word[i] = str[i];
 		i++;
 	}
 	first_word[i] = '\0';
-	while (str[i] == ' ' || str[i] == '	')
+	while (str[i] == ' ' || str[i] == '\t')
 		i++;
 	while (str[i] != '\0')
 	{
@@ -53,7 +49,6 @@ void	ft_rostring(char *str)
 		write(1, &first_word[i], 1);
 		i++;
 	}
-	
 }
 
 int	main(int ac, char **av)

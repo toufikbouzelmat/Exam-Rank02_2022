@@ -6,7 +6,7 @@
 /*   By: tbouzalm <tbouzalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 02:40:51 by tbouzalm          #+#    #+#             */
-/*   Updated: 2022/06/14 05:06:01 by tbouzalm         ###   ########.fr       */
+/*   Updated: 2022/07/22 06:50:28 by tbouzalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ void	ft_rev_wstr(char *str)
 		first_word = 0;
 		i = j;
 	}
-	
-	
 }
 
 int	main(int ac, char **av)
