@@ -6,13 +6,14 @@
 /*   By: tbouzalm <tbouzalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 16:18:09 by tbouzalm          #+#    #+#             */
-/*   Updated: 2022/06/01 16:29:42 by tbouzalm         ###   ########.fr       */
+/*   Updated: 2022/07/21 23:57:43 by tbouzalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int	ft_strlen(char *s)
 {
@@ -44,7 +45,7 @@ char	*ft_strcpy(char *s1, char *s2)
 int main()
 {
 	char *s1 = "test";
-	char *s2 = "raja";
+	char *s2 = "";
 
 	printf("%s\n",ft_strcpy(s1,s2));
 }

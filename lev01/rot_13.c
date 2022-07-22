@@ -6,33 +6,38 @@
 /*   By: tbouzalm <tbouzalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 17:00:55 by tbouzalm          #+#    #+#             */
-/*   Updated: 2022/06/01 20:51:48 by tbouzalm         ###   ########.fr       */
+/*   Updated: 2022/07/22 02:15:01 by tbouzalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	main(int ac, char **av)
+void	ft_rot(char *str)
 {
 	int	i;
-	
+
 	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] >= 'a' && str[i] <= 'm')
+			str[i] += 13;
+		else if (str[i] >= 'A' && str[i] <= 'M')
+			str[i] += 13;
+		else if (str[i] >= 'n' && str[i] <= 'z')
+			str[i] -= 13;
+		else if (str[i] >= 'N' && str[i] <= 'Z')
+			str[i] -= 13;
+		write(1, &str[i] , 1);
+		i++;
+	}
+	
+}
+
+int	main(int ac, char **av)
+{
 	if (ac == 2)
 	{
-		while (av[1][i] != '\0')
-		{
-			if (av[1][i] >= 'a' && av[1][i] <= 'm')
-				av[1][i] += 13;
-			else if (av[1][i] >= 'A' && av[1][i] <= 'M')
-				av[1][i] += 13;
-			else if (av[1][i] >= 'N' && av[1][i] <= 'Z')
-				av[1][i] += 13;
-			else if (av[1][i] >= 'n' && av[1][i] <= 'z')
-				av[1][i] -= 13;
-			write(1, &av[1][i], 1);
-			i++;
-		}
-		
+		ft_rot(av[1]);
 	}
 	write(1, "\n", 1);
 	
