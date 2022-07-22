@@ -6,7 +6,7 @@
 /*   By: tbouzalm <tbouzalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 01:09:45 by tbouzalm          #+#    #+#             */
-/*   Updated: 2022/07/04 13:29:47 by tbouzalm         ###   ########.fr       */
+/*   Updated: 2022/07/22 06:40:52 by tbouzalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,8 @@ int	ft_pcgd(unsigned int nb1, unsigned int nb2)
 
 int	main(int ac, char **av)
 {
-	printf("%d",ft_pcgd(atoi(av[1]),atoi(av[2])));
+	if (ac == 3)
+		printf("%d",ft_pcgd(atoi(av[1]),atoi(av[2])));
+	else
+		write(1, "\n", 1);
 }

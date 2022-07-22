@@ -6,7 +6,7 @@
 /*   By: tbouzalm <tbouzalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 16:15:38 by tbouzalm          #+#    #+#             */
-/*   Updated: 2022/06/12 02:27:42 by tbouzalm         ###   ########.fr       */
+/*   Updated: 2022/07/22 06:45:29 by tbouzalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	ft_str(char *str)
 		else if (ft_islow(str[i]) && (str[i - 1] == ' ' || str[i - 1] == '	'))
 		{
 			str[i] -= 32;
-			sleep(5);
 		}
 		else if (ft_isup(str[i]) && (i > 0 && str[i - 1] != ' ' && str[i - 1] != '	'))
 			str[i] += 32;

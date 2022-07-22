@@ -6,7 +6,7 @@
 /*   By: tbouzalm <tbouzalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 02:41:07 by tbouzalm          #+#    #+#             */
-/*   Updated: 2022/06/24 00:19:40 by tbouzalm         ###   ########.fr       */
+/*   Updated: 2022/07/22 06:38:40 by tbouzalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ int	*ft_range(int start, int end)
 
 	size = (end - start);
 	ptr = (int *)malloc(sizeof(int) * size);
+	ret = NULL;
 	if (end >= start)
 	{
+		ret = ptr;
 		while (end >= start)
 		{
 			*ptr = end;
@@ -34,6 +36,7 @@ int	*ft_range(int start, int end)
 	}
 	else if (start >= end)
 	{
+		ret = ptr;
 		while (start >= end)
 		{
 			*ptr = end;
