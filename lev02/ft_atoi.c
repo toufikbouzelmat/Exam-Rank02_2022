@@ -6,7 +6,7 @@
 /*   By: tbouzalm <tbouzalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 02:48:00 by tbouzalm          #+#    #+#             */
-/*   Updated: 2022/06/30 03:51:19 by tbouzalm         ###   ########.fr       */
+/*   Updated: 2022/07/22 04:58:41 by tbouzalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_atoi(const char *str)
 
 int	main()
 {
-	char s[4]="-548";
+	char s[]="5486545";
 	
 	printf("atoi original:%d\n",atoi(s));
 	printf("ft_atoi:%d",ft_atoi(s));

@@ -6,7 +6,7 @@
 /*   By: tbouzalm <tbouzalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 02:31:58 by tbouzalm          #+#    #+#             */
-/*   Updated: 2022/06/06 02:47:09 by tbouzalm         ###   ########.fr       */
+/*   Updated: 2022/07/22 04:54:54 by tbouzalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,24 @@ int	main(int ac, char **av)
 	int nb2;
 	int r;
 
-	i = 0;
-	nb1 = atoi(av[1]);
-	nb2 = atoi(av[3]);
+	
 	if (ac == 4)
 	{
+		i = 0;
+		nb1 = atoi(av[1]);
+		nb2 = atoi(av[3]);
 		if (av[2][0] == '*')
 			r = nb1 * nb2;
 		else if (av[2][0] == '+')
 			r = nb1 + nb2;
 		else if (av[2][0] == '/')
 			r = nb1 / nb2;
+		else if (av[2][0] == '-')
+			r = nb1 - nb2;
+		else if (av[2][0] == '%')
+			r = nb1 % nb2;
 		printf("%d",r);
 	}
+	else
+		write(1, "\n", 1);
 }
