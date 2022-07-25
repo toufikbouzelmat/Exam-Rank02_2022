@@ -84,16 +84,18 @@ char	**ft_split(char *str)
 
 	i = 0;
 	i2 = 0;
+	if (!str)
+		return (NULL);
 	tab = (char**)malloc(sizeof(**tab) * WD_NUM);
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
 		i++;
 	while (str[i] != '\0')
 	{
-		if (str[i] > 32)
+		if (str[i] != ' ' && str[i] != '\t' && str[i] != '\n')
 		{
 			i3 = 0;
 			tab[i2] = (char*)malloc(sizeof(char) * WD_LEN);
-			while (str[i] > 32)
+			while ((str[i] != ' ' && str[i] != '\t' && str[i] != '\n') && str[i])
 			{
 				tab[i2][i3] = str[i];
 				i++;
@@ -109,3 +111,14 @@ char	**ft_split(char *str)
 	return (tab);
 }
 
+int main()
+{
+	char **ret = ft_split("taoufik raja 'mach\vi' widad wlad l97ab  ");
+	int i = 0;
+	while(ret[i])
+	{
+		printf("%s\n", ret[i]);
+		i++;
+	}
+
+}
