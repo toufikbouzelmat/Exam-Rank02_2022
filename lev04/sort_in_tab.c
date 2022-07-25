@@ -6,34 +6,30 @@
 /*   By: tbouzalm <tbouzalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 07:43:16 by tbouzalm          #+#    #+#             */
-/*   Updated: 2022/07/22 06:56:21 by tbouzalm         ###   ########.fr       */
+/*   Updated: 2022/07/25 13:00:36 by tbouzalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	swap_values(int *a, int *b)
-{
-	int swap = *a;
-	*a = *b;
-	*b = swap;
-}
+#include<unistd.h>
 
 void	sort_int_tab(int *tab, unsigned int size)
 {
 	unsigned int i;
-	int swapped = 1;
+	int tmp;
 
-	while (swapped == 1)
+	i = 0;
+	if (tab != NULL)
 	{
-		i = 1;
-		swapped = 0;
 		while (i < size)
 		{
-			if (tab[i - 1] > tab[i])
+			if (tab[i] > tab[i + 1])
 			{
-				swap_values(&tab[i - 1], &tab[i]);
-				swapped = 1;
+				tmp = tab[i];
+				tab[i] = tab[i + 1];
+				tab[i + 1] = tmp;
+				i = -1;
 			}
-			++i;
+			i++;
 		}
 	}
 }

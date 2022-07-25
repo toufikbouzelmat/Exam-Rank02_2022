@@ -6,7 +6,7 @@
 /*   By: tbouzalm <tbouzalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 02:41:07 by tbouzalm          #+#    #+#             */
-/*   Updated: 2022/07/22 06:38:40 by tbouzalm         ###   ########.fr       */
+/*   Updated: 2022/07/25 13:34:00 by tbouzalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,45 +14,44 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int	*ft_range(int start, int end)
+int		absolute_value(int n)
 {
-	unsigned int	size;
-	int	*ret;
-	int	*ptr;
-
-	size = (end - start);
-	ptr = (int *)malloc(sizeof(int) * size);
-	ret = NULL;
-	if (end >= start)
-	{
-		ret = ptr;
-		while (end >= start)
-		{
-			*ptr = end;
-			printf("%d\n",*ptr);
-			ptr++;
-			end--;
-		}
-	}
-	else if (start >= end)
-	{
-		ret = ptr;
-		while (start >= end)
-		{
-			*ptr = end;
-			printf("%d\n",*ptr);
-			ptr++;
-			end++;
-		}
-	}
-	return (ret);
-
+	if (n < 0)
+		return (-n);
+	return (n);
 }
+
+int		*ft_rrange(int start, int end)
+{
+	int number_of_ints;
+	int *array;
+	int step;
+	int i;
+
+	number_of_ints = 1 + absolute_value(end - start);
+	array = malloc(sizeof(int) * number_of_ints);
+
+	if (start > end)
+		step = 1;
+	else
+		step = -1;
+
+	i = 0;
+	while (i < number_of_ints)
+	{
+		array[i] = end;
+		printf("%d\n",array[i]);
+		end = end + step;
+		++i;
+	}
+	return (array);
+}
+
 int main()
 {
 
 
-	ft_range(0, -3);
+	ft_rrange(-1, 2);
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: tbouzalm <tbouzalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 00:37:20 by tbouzalm          #+#    #+#             */
-/*   Updated: 2022/07/22 06:55:26 by tbouzalm         ###   ########.fr       */
+/*   Updated: 2022/07/25 13:08:51 by tbouzalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,48 +14,69 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void	ft_rostring(char *str)
+void	ft_putstr(char *str)
 {
-	int	i;
-	char *first_word;
-	int len_first_word;
+	int i;
 
 	i = 0;
-	while (str[i] == '	' && str[i] =='\t')
-		i++;
-	i = 0;
-	while (str[i] != ' ' && str[i] != '\t')
-		i++;
-	len_first_word = i;
-	first_word = (char *)malloc((len_first_word + 1) * 1);
-	i = 0;
-	while (str[i] != ' ' && str[i] != '\t')
-	{
-		first_word[i] = str[i];
-		i++;
-	}
-	first_word[i] = '\0';
-	while (str[i] == ' ' || str[i] == '\t')
-		i++;
 	while (str[i] != '\0')
 	{
 		write(1, &str[i], 1);
 		i++;
 	}
-	write(1, " ", 1);
-	i = 0;
-	while (first_word[i] != '\0')
-	{
-		write(1, &first_word[i], 1);
-		i++;
-	}
 }
 
-int	main(int ac, char **av)
+char	**ft_split(char *str)
 {
-	if (ac == 2)
+	int i;
+	int i2;
+	int i3;
+	char **tab;
+
+	i = 0;
+	i2 = 0;
+	tab = (char**)malloc(sizeof(char) * 100);
+	while (str[i] == ' ' || str[i] == '\t')
+		i++;
+	while (str[i] != '\0')
 	{
-		ft_rostring(av[1]);
+		if (str[i] != ' ' && str[i] != '\t')
+		{
+			i3 = 0;
+			tab[i2] = (char*)malloc(sizeof(char) * 100);
+			while (str[i] != ' ' && str[i] != '\t' && str[i])
+			{
+				tab[i2][i3] = str[i];
+				i++;
+				i3++;
+			}
+			tab[i2][i3] = '\0';
+			i2++;
+		}
+		else
+			i++;
+	}
+	tab[i2] = 0;
+	return (tab);
+}
+
+int		main(int ac, char **av)
+{
+	int i;
+	char **tab;
+
+	i = 1;
+	if (ac > 1)
+	{
+		tab = ft_split(av[1]);
+		while (tab[i])
+		{
+			ft_putstr(tab[i]);
+			write(1, " ", 1);
+			i++;
+		}
+		ft_putstr(tab[0]);
 	}
 	write(1, "\n", 1);
+	return (0);
 }
