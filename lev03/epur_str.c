@@ -1,39 +1,26 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   epur_str.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tbouzalm <tbouzalm@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 07:34:20 by tbouzalm          #+#    #+#             */
-/*   Updated: 2022/07/25 14:17:13 by tbouzalm         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include<unistd.h>
 #include<stdio.h>
+#include<unistd.h>
 
-int		main(int ac, char **av)
+int main(int ac, char **av)
 {
-	int i;
-
-	i = 0;
-	if (ac == 2)
-	{
-		while (av[1][i] == ' ' || av[1][i] == '\t')
-			i++;
-		while (av[1][i] != '\0')
-		{
-			if (av[1][i] == ' ' || av[1][i] == '\t')
-			{
-				if (av[1][i + 1] > 32 && av[1][i + 1] != '\0')
-					write(1, " ", 1);
-			}
-			else if (av[1][i] != ' ' && av[1][i] != '\t')
-				write(1, &av[1][i], 1);
-			i++;
-		}
-	}
-	write(1, "\n", 1);
-	return (0);
+    int i;
+    
+    i = 0;
+    if (ac == 2)
+    {
+        while (av[1][i] == ' ' && av[1][i] == '\t')
+            i++;
+        while (av[1][i] != '\0')
+        {
+            if (av[1][i] == ' ' || av[1][i] == '\t')
+            {
+                if (av[1][i + 1] > 32 && av[1][i] != '\0')
+                    write(1, " ", 1);
+            }
+            else if (av[1][i] != ' ' && av[1][i] != '\t')
+                write(1, &av[1][i], 1);
+            i++;
+        }
+    }
+    write(1, "\n", 1);
 }

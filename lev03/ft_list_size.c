@@ -1,14 +1,16 @@
-int		ft_list_size(t_list *begin_list)
-{
-	t_list *list;
-	int i;
+#include "ft_list.h"
 
-	list = begin_list;
-	i = 0;
-	while (list)
-	{
-		list = list->next;
-		i++;
-	}
-	return (i);
+int	ft_list_size(t_list *begin_list)
+{
+    int i;
+    t_list *list;
+
+    i = 0;
+    list = begin_list;
+    while (list)
+    {
+        i++;
+        list = list->next;
+    }
+    return (i);
 }
