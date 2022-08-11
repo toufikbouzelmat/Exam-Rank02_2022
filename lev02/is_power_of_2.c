@@ -6,7 +6,7 @@
 /*   By: tbouzalm <tbouzalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 05:44:43 by tbouzalm          #+#    #+#             */
-/*   Updated: 2022/06/06 05:51:39 by tbouzalm         ###   ########.fr       */
+/*   Updated: 2022/08/11 03:20:20 by tbouzalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	is_power_of_2(unsigned int n)
 
 int main()
 {
-	int	n = 64;
+	int	n = 4;
 
 	printf("%d\n",is_power_of_2(n));
 }

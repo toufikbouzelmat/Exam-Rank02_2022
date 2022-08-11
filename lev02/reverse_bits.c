@@ -1,6 +1,22 @@
 #include <unistd.h>
 #include <math.h>
 #include <stdio.h>
+
+int	ft_pow(int n,int p)
+{
+	int	i;
+	int ret = n;
+
+	i = 1;
+	while (i < p)
+	{
+		ret *= n;
+		i++;
+	}
+	printf("%d\n", ret);
+	return (ret);
+}
+
 unsigned char	reverse_bits(unsigned char octet)
 {
 	int i;
@@ -13,7 +29,7 @@ unsigned char	reverse_bits(unsigned char octet)
 	{
 		if (octet >> i & 1)
 		{
-			c += pow(2, j);
+			c += ft_pow(2, j);
 			j--;
 		}
 		else
@@ -21,7 +37,6 @@ unsigned char	reverse_bits(unsigned char octet)
 		i++;
 	}
 	return (c);
-	
 }
 
 int main()
@@ -30,6 +45,7 @@ int main()
 	int i;
 
 	i = 7;
+	ft_pow(9,3);
 	while (i >= 0)
 	{
 		if (k >> i & 1)
