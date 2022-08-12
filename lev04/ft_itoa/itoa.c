@@ -14,14 +14,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int	absolutevalue(int nbr)
-{
-	if (nbr < 0)
-		return(-nbr);
-	return (nbr);
-}
-
-int	ft_len_nbr(int nbr)
+int	ft_len_nbr(long nbr)
 {
 	int i;
 
@@ -42,20 +35,26 @@ char	*ft_itoa(int nbr)
 	int	len;
 	int i;
 	char *str;
-
-	len = ft_len_nbr(nbr);
+	long	n;
+	
+	n = nbr;
+	len = ft_len_nbr(n);
 	str = (char *)malloc((len + 1) * sizeof(char));
 	str[len] = '\0';
-	if (nbr < 0)
+	if (n < 0)
+	{	
 		str[0] = '-';
-	else if (nbr == 0)
+		n = -n;
+		i = 1;
+	}
+	else if (n == 0)
 		str[0] = '0';
 	i = 0;
-	while (nbr != 0)
+	while (n != 0)
 	{
 		--len;
-		str[len] = absolutevalue(nbr % 10) + '0';
-		nbr = nbr / 10;
+		str[len] = n % 10 + '0';
+		n = n / 10;
 	}
 	return (str);
 }
