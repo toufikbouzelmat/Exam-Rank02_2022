@@ -21,7 +21,7 @@ void    ft_putchar(char c)
 
 void    ft_putnbr(int n)
 {
-    if (n > 10)
+    if (n > 9)
     {
         ft_putnbr(n / 10);
         ft_putnbr(n % 10);
